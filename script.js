@@ -12,65 +12,65 @@ const scoreDiv = document.getElementById("scoreContainer");
 // create our questions
 let questions = [
     {
-        question : "What does HTML stand for?",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
-        correct : "A"
-    },{
-        question : "What does CSS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-        correct : "B"
-    },{
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
-    },{
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does HTML stand for?",
+        choiceA: "Correct",
+        choiceB: "Wrong",
+        choiceC: "Wrong",
+        correct: "A"
     }, {
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does CSS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Correct",
+        choiceC: "Wrong",
+        correct: "B"
     }, {
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
     }, {
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
     }, {
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
     }, {
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
     }, {
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
+    }, {
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
+    }, {
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
+    }, {
+        question: "What does JS stand for?",
+        choiceA: "Wrong",
+        choiceB: "Wrong",
+        choiceC: "Correct",
+        correct: "C"
     }
 ];
 
@@ -78,80 +78,67 @@ let questions = [
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 0;
-const questionTime = 10; // 10s
+let count = 60;
 let TIMER;
 let score = 0;
 
 // render a question
-function renderQuestion(){
+function renderQuestion() {
     let q = questions[runningQuestion];
-    
-    question.innerHTML = "<p>"+ q.question +"</p>";
+
+    question.innerHTML = "<p>" + q.question + "</p>";
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
 }
 
-start.addEventListener("click",startQuiz);
+start.addEventListener("click", startQuiz);
 
 // start quiz
-function startQuiz(){
+function startQuiz() {
     start.style.display = "none";
     renderQuestion();
     quiz.style.display = "block";
     renderProgress();
     renderCounter();
-    TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
+    TIMER = setInterval(renderCounter, 6000);
 }
 
 // render progress
-function renderProgress(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+function renderProgress() {
+    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
+        progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
     }
 }
 
 // counter render
-
-function renderCounter(){
-    if(count <= questionTime){
-        counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeUnit + "px";
-        count++
-    }else{
-        count = 0;
-        // change progress color to red
-        answerIsWrong();
-        if(runningQuestion < lastQuestion){
-            runningQuestion++;
-            renderQuestion();
-        }else{
-            // end the quiz and show the score
-            clearInterval(TIMER);
-            scoreRender();
-        }
-    }
+function renderCounter() {
+    const timeLeft = setInterval(countdown, 1000)
+    if (count == -1) {
+        clearTimeout(timeLeft);
+        // add replay function here
+    } 
 }
 
-// checkAnwer
 
-function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
+// check answers
+
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
         // answer is correct
         score++;
         // change progress color to green
         answerIsCorrect();
-    }else{
+    } else {
         // answer is wrong
         // change progress color to red
         answerIsWrong();
     }
     count = 0;
-    if(runningQuestion < lastQuestion){
+    if (runningQuestion < lastQuestion) {
         runningQuestion++;
         renderQuestion();
-    }else{
+    } else {
         // end the quiz and show the score
         clearInterval(TIMER);
         scoreRender();
@@ -159,22 +146,20 @@ function checkAnswer(answer){
 }
 
 // answer is correct
-function answerIsCorrect(){
+function answerIsCorrect() {
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
 // answer is Wrong
-function answerIsWrong(){
+function answerIsWrong() {
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
 
 // score render
-function scoreRender(){
+function scoreRender() {
     scoreDiv.style.display = "block";
-    
-    // calculate the amount of question percent answered by the user
-    const scorePerCent = Math.round(100 * score/questions.length);
-    
 
-    scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+    // calculate the amount of question percent answered by the user
+    const scorePerCent = Math.round(100 * score / questions.length);
+    scoreDiv.innerHTML += "<p>" + scorePerCent + "%</p>";
 }
