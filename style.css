@@ -12,6 +12,9 @@ body {
 /* #ef5561 red */
 /* #f8f086 yellow */
 /* #6ec8ed blue */
+/* #acd9d3 mint */
+/* #d5a9d3 purple */
+/* #f087a0 light red */
 /* font-family: 'Monofett', cursive;
 font-family: 'Nova Mono', monospace; */
 
@@ -242,11 +245,11 @@ li {
 }
 
 .li1 {
-    background-color: #ef5561;
-    border: #ef5561;
+    background-color: #f087a0;
+    border: #f087a0;
 }
 
 .li2 {
-    background-color: #92cf7d;
-    border: #92cf7d;
+    background-color: #d5a9d3;
+    border: #d5a9d3;
 }
