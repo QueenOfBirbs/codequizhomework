@@ -1,3 +1,4 @@
+/* QUIZ HTML PAGE ITEMS */
 body {
     background-image: url(./customization/5450.jpg);
     background-position: bottom background-size=cover;
@@ -15,6 +16,9 @@ body {
 /* BUTTONS */
 .button {
     width: 135px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
     text-align: center;
     border-radius: 50px;
     cursor: pointer;
@@ -25,6 +29,14 @@ body {
     font-size: medium;
 }
 
+a:link,
+a:hover,
+a:active,
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
 .countdown {
     position: absolute;
     z-index: 10;
@@ -32,9 +44,9 @@ body {
     text-align: center;
     border-radius: 50px;
     cursor: pointer;
-    padding: 0px;
+    padding: 5px;
     border: 15px double white;
-    left: 1100px;
+    left: 1050px;
     top: 10px;
     background-image: url(./customization/4149851.webp);
     background-size: 100%;
@@ -95,7 +107,7 @@ body {
     padding-right: 15px;
     margin-right: -35px;
     font-size: x-large;
-    text-align:right;
+    text-align: right;
 }
 
 #choices {
@@ -148,24 +160,74 @@ body {
 
 /* POP-UP SCORE PAGE (AFTER FINISHING QUIZ) */
 #scoreContainer {
-    background-color: white;
-    opacity: 0.8;
+    background-image: url(./customization/v935-aum-13-a_3.jpg);
+    background-size: 100%;
+    border: #f8f086;
+    border-style: double;
+    border-width: 25px;
+    opacity: 0.9;
     height: 300px;
     width: 700px;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0px 5px 15px 0px;
-    position: relative;
+    position: absolute;
+    top: 50px;
     display: none;
 }
 
 #scoreContainer p {
-    position: absolute;
-    display: block;
-    width: 59px;
-    height: 59px;
-    top: 130px;
-    left: 325px;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: xxx-large;
+    padding: 80px;
     text-align: center;
+}
+
+
+
+/* HIGHSCORE HTML PAGE ITEMS */
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.submit {
+    position: absolute;
+    top: 225px;
+    right: 545px;
+}
+
+.reset {
+    position: absolute;
+    top: 225px;
+    right: 20px;
+}
+
+label {
+    position: absolute;
+    top: 70px;
+    left: 210px;
+}
+
+#intialsText {
+    position: absolute;
+    top: 70px;
+    right: 200px;
+}
+
+li {
+    text-align: center;
+    list-style: none;
+    display: table;
+    margin: 0px auto 0px auto;
+    padding:5px;
+    border-radius: 10px;
+}
+
+.li1 {
+    background-color: #ef5561;
+    border: #ef5561;
+}
+
+.li2 {
+    background-color: #92cf7d;
+    border: #92cf7d;
 }

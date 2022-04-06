@@ -14,8 +14,8 @@ let questions = [
     {
         question: "What kinda animal is Pompompurin?",
         choiceA: " A Golden Retreiver dog.",
-        choiceB: "A sentient pudding creation.",
-        choiceC: "A stereotypically inaccurate caricature of a French dude.",
+        choiceB: "A sentient pudding creature.",
+        choiceC: "A stereotypically inaccurate caricature of a French dude but in dog form.",
         correct: "A"
     }, {
         question: "What is Cinnamoroll's birthdate?",
@@ -161,9 +161,10 @@ function answerIsWrong() {
 
 // GIVING OUT THE FINAL SCORE AND RE-DIRECTING THEM TO THE HIGHSCORE PAGE
 function scoreRender() {
-    scoreDiv.style.display = "block";
-    scoreDiv.innerHTML = "<p>Your highscore is:</p>" + timeLeft;
-    redirectUser();
+    const outPut = `<p>Your highscore is: ${timeLeft}!</p>`
+    scoreDiv.style.display = "inline-block";
+    scoreDiv.innerHTML = outPut
+    // redirectUser();
 }
 
 // GIVES THE USER TIME TO SEE SCORE
