@@ -78,12 +78,12 @@ let questions = [
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 60;
-let TIMER;
-let score = 0;
+let count = "";
+let score = -1;
+let timeLeft = 59;
 
 // render a question
-function renderQuestion() {
+function makeQuestion() {
     let q = questions[runningQuestion];
 
     question.innerHTML = "<p>" + q.question + "</p>";
@@ -97,36 +97,42 @@ start.addEventListener("click", startQuiz);
 // start quiz
 function startQuiz() {
     start.style.display = "none";
-    renderQuestion();
+    makeQuestion();
     quiz.style.display = "block";
-    renderProgress();
-    renderCounter();
-    TIMER = setInterval(renderCounter, 6000);
+    quizProgress();
+    countdown();
 }
 
 // render progress
-function renderProgress() {
+function quizProgress() {
     for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
         progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
     }
 }
 
 // counter render
-function renderCounter() {
-    const timeLeft = setInterval(countdown, 1000)
-    if (count == -1) {
-        clearTimeout(timeLeft);
-        // add replay function here
-    } 
+function countdown() {
+    quizTimer = setTimeout(countdown, 1000);
+
+    if (timeLeft == -1) {
+        clearTimeout(quizTimer);
+        gameOver();
+    } else {
+        counter.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
 }
 
+// function gameOver() {
+//     scoreDiv.style.display = "block";
+//     scoreDiv.innerHTML = "<p>" + timeLeft
+
+// }
 
 // check answers
 
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
-        // answer is correct
-        score++;
         // change progress color to green
         answerIsCorrect();
     } else {
@@ -134,13 +140,13 @@ function checkAnswer(answer) {
         // change progress color to red
         answerIsWrong();
     }
-    count = 0;
+
     if (runningQuestion < lastQuestion) {
         runningQuestion++;
-        renderQuestion();
+        makeQuestion();
     } else {
         // end the quiz and show the score
-        clearInterval(TIMER);
+        clearInterval(quizTimer);
         scoreRender();
     }
 }
@@ -151,15 +157,14 @@ function answerIsCorrect() {
 }
 
 // answer is Wrong
+
 function answerIsWrong() {
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    timeLeft -= 5;
 }
 
 // score render
 function scoreRender() {
     scoreDiv.style.display = "block";
-
-    // calculate the amount of question percent answered by the user
-    const scorePerCent = Math.round(100 * score / questions.length);
-    scoreDiv.innerHTML += "<p>" + scorePerCent + "%</p>";
+    scoreDiv.innerHTML = "<p>Your highscore is:</p>" + timeLeft
 }

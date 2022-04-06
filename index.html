@@ -9,6 +9,9 @@
 
 <body>
     <button id="highscore" class="choice"><a href ="highscore.html" target ="_blank">Highscores</a></button>
+    <div id="timer">
+        <div id="counter" class="choice">Time Left:</div>
+    </div>
     <div id="container">
         <div id="start">Start Quiz!</div>
         <div id="quiz" style="display: none">
@@ -17,9 +20,6 @@
                 <div class="choice" id="A" onclick="checkAnswer('A')"></div>
                 <div class="choice" id="B" onclick="checkAnswer('B')"></div>
                 <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-            </div>
-            <div id="timer">
-                <div id="counter"></div>
             </div>
             <div id="progress"></div>
         </div>
