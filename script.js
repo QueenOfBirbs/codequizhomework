@@ -1,4 +1,4 @@
-// select all elements
+// ELEMENT IDS
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
@@ -9,7 +9,7 @@ const counter = document.getElementById("counter");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
-// create our questions
+// THE QUIZ QUESTIONS 
 let questions = [
     {
         question: "What does HTML stand for?",
@@ -74,15 +74,14 @@ let questions = [
     }
 ];
 
-// create some variables
-
+// ADDDING MORE VARIABLES
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = "";
 let score = -1;
 let timeLeft = 59;
 
-// render a question
+// QUESTION STUFF
 function makeQuestion() {
     let q = questions[runningQuestion];
 
@@ -94,7 +93,7 @@ function makeQuestion() {
 
 start.addEventListener("click", startQuiz);
 
-// start quiz
+// STARTING QUIZ AND EVERYTHING ALONGSIDE IT
 function startQuiz() {
     start.style.display = "none";
     makeQuestion();
@@ -103,14 +102,14 @@ function startQuiz() {
     countdown();
 }
 
-// render progress
+// MAKING THE QUESTIONS TRIGGER THE PROGRESS BAR
 function quizProgress() {
     for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
         progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
     }
 }
 
-// counter render
+// TIMER COUNTDOWN
 function countdown() {
     quizTimer = setTimeout(countdown, 1000);
 
@@ -123,20 +122,19 @@ function countdown() {
     }
 }
 
+// IF TIME RUN OUTS BEFORE ANSWERING ALL OF THE QUESTIONS
 function gameOver() {
     scoreDiv.style.display = "block";
     scoreDiv.innerHTML = "<p>Your highscore is:</p>" + 0
 }
 
-// check answers
-
+// CHECKS USER ANSWERS AND CHANGES THE COLOR OF THE CIRCLES IN THE PROGRESS BAR
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
-        // change progress color to green
+        // ANSWER IS RIGHT AND CHANGES PROGRESS CIRCLE TO GREEN
         answerIsCorrect();
     } else {
-        // answer is wrong
-        // change progress color to red
+        // ANSWER IS WRONG AND CHANGES PROGRESS CIRCLE TO RED
         answerIsWrong();
     }
 
@@ -144,33 +142,41 @@ function checkAnswer(answer) {
         runningQuestion++;
         makeQuestion();
     } else {
-        // end the quiz and show the score
+        // ENDING QUIZ AND SHOWING THEIR SCORE
         clearInterval(quizTimer);
         scoreRender();
     }
 }
 
-// answer is correct
+// PROGRESS CIRCLE GREEN CHANGE
 function answerIsCorrect() {
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
-// answer is Wrong
-
+// PROGRESS CIRCLE RED CHANGE AND TAKING AWAY 6 SECONDS FOR A WRONG ANSWER
 function answerIsWrong() {
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
     timeLeft -= 5;
 }
 
-// score render
+// GIVING OUT THE FINAL SCORE AND RE-DIRECTING THEM TO THE HIGHSCORE PAGE
 function scoreRender() {
     scoreDiv.style.display = "block";
     scoreDiv.innerHTML = "<p>Your highscore is:</p>" + timeLeft;
-    window.location.href = "https://queenofbirbs.github.io/codequizhomework/highscore.html";
+    redirectUser();
 }
 
+// GIVES THE USER TIME TO SEE SCORE
+function redirectUser () {
+        var pageStall = setTimeout(function () {
+            window.location.href = "https://queenofbirbs.github.io/codequizhomework/highscore.html";
+            window.clearTimeout(pageStall);
+        }, 5000);
+    }
 
-// // store highscores for scoreboard
+
+// // STORE HIGHSCORES FROM GAME FOR SCOREBOARD (DOESN'T WORK LOL)
+
 // const playerScore = timeLeft
 // function HighScores() {
 //     if (typeof (Storage) !== "undefined") {
@@ -193,5 +199,7 @@ function scoreRender() {
 //     }
 // }
 
-// const quizScores = "playerScore";
-// sessionStorage.setItem("playerScore", quizScores);
+
+// LINKS THIS SHEET TO THE OTHER JAVASCRIPT SHEET SO IT CAN SHARE HIGHSCORE DATA
+const quizScores = "playerScore";
+sessionStorage.setItem("playerScore", quizScores);
