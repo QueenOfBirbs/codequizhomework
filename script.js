@@ -123,11 +123,10 @@ function countdown() {
     }
 }
 
-// function gameOver() {
-//     scoreDiv.style.display = "block";
-//     scoreDiv.innerHTML = "<p>" + timeLeft
-
-// }
+function gameOver() {
+    scoreDiv.style.display = "block";
+    scoreDiv.innerHTML = "<p>Your highscore is:</p>" + 0
+}
 
 // check answers
 
@@ -166,5 +165,35 @@ function answerIsWrong() {
 // score render
 function scoreRender() {
     scoreDiv.style.display = "block";
-    scoreDiv.innerHTML = "<p>Your highscore is:</p>" + timeLeft
+    scoreDiv.innerHTML = "<p>Your highscore is:</p>" + timeLeft;
+    <script>
+  window.location.href = "http://mywebsite.com/home.html";
+</script>
 }
+
+
+// store highscores for scoreboard
+const playerScore = timeLeft
+function HighScores() {
+    if(typeof(Storage)!=="undefined"){
+        var scores = false;
+        if(localStorage["playerScore"]) {
+            playerScore.style.display = "block";
+            scoreDiv.innerHTML = '';
+            scores = JSON.parse(localStorage["playerScore"]);
+            scores = scores.sort(function(a,b){return parseInt(b)-parseInt(a)});
+
+            for(var i = 0; i < 10; i++){
+                var s = scores[i];                        
+                var fragment = document.createElement('li');
+                fragment.innerHTML = (typeof(s) != "undefined" ? s : "" );
+                quizScores.appendChild(fragment);
+            }
+        }
+    } else {
+        scoreDiv.display = "none";
+    }
+}
+
+const quizScores = "playerScore";
+sessionStorage.setItem("playerScore", quizScores);
