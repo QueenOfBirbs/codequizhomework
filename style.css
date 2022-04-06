@@ -1,7 +1,36 @@
 body {
-    font-size: 20px;
-    font-family: monospace;
+    background-image: url(./customization/5450.jpg);
+    background-position: bottom
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+/* BUTTONS */
+.button {
+    width: 135px;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: white;
+}
+
+.countdown {
+    position: absolute;
+    z-index: 10;
+    width: 135px;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: white;
+    left: 1115px;
+    top: 10px;
+}
+
+.highscore {}
 
 /* QUIZ BOX */
 #container {
@@ -11,7 +40,10 @@ body {
     width: 700px;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px;
-    position: relative;
+    position: absolute;
+    left: 275px;
+    top: 80px;
+    background-image: linear-gradient();
 }
 
 /* START BUTTON */
@@ -71,19 +103,6 @@ body {
 .choice:hover {
     border: 2px solid grey;
     font-weight: bold;
-}
-
-/* COUNTDOWN TIMER */
-#timer {
-    position: absolute;
-    height: 100px;
-    width: 200px;
-    bottom: 0px;
-    text-align: center;
-}
-
-#counter {
-    font-size: 3em;
 }
 
 /* PROGRESS CIRCLE BAR */
