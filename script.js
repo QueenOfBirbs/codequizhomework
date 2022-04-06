@@ -57,13 +57,13 @@ let questions = [
         question: "Who is the creator of Hangyodon?",
         choiceA: "Your mom.",
         choiceB: "Hisato Inoue.",
-        choiceC: "Are you refering to Oannes, a fish/man Mesopotamian god? I don't think you can create an anciet deity.",
+        choiceC: "I don't think you can create an ancient Mesopotamian deity.",
         correct: "B"
     }, {
         question: "Why is Gudetama an egg character?",
-        choiceA: "The creator thought egg yolks were kinda adorable because of their droopy demeanor.",
+        choiceA: "The creator thought egg yolks were cute because of their droopy demeanor.",
         choiceB: "Because why not?",
-        choiceC: "Why do you know such niche knowledge on Sanrio characters? This is very specific.",
+        choiceC: "Why do you know such niche knowledge on Sanrio characters?",
         correct: "A"
     }, {
         question: "Are San-X and Sanrio the same?",
@@ -125,7 +125,7 @@ function countdown() {
 // IF TIME RUN OUTS BEFORE ANSWERING ALL OF THE QUESTIONS
 function gameOver() {
     scoreDiv.style.display = "block";
-    scoreDiv.innerHTML = "<p>Your highscore is:</p>" + 0
+    scoreDiv.innerHTML = "<p>Your highscore is: 0!</p>"
 }
 
 // CHECKS USER ANSWERS AND CHANGES THE COLOR OF THE CIRCLES IN THE PROGRESS BAR
@@ -168,12 +168,12 @@ function scoreRender() {
 }
 
 // GIVES THE USER TIME TO SEE SCORE
-function redirectUser () {
-        var pageStall = setTimeout(function () {
-            window.location.href = "https://queenofbirbs.github.io/codequizhomework/highscore.html";
-            window.clearTimeout(pageStall);
-        }, 5000);
-    }
+function redirectUser() {
+    var pageStall = setTimeout(function () {
+        window.location.href = "https://queenofbirbs.github.io/codequizhomework/highscore.html";
+        window.clearTimeout(pageStall);
+    }, 5000);
+}
 
 
 // // STORE HIGHSCORES FROM GAME FOR SCOREBOARD (DOESN'T WORK LOL)

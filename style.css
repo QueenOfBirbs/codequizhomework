@@ -6,12 +6,14 @@ body {
     margin: auto;
 }
 
-/* COLORS */
+/* COLORS AND FONTS*/
 /* #92cf7d green*/
 /* #f59fc4 pink*/
 /* #ef5561 red */
 /* #f8f086 yellow */
 /* #6ec8ed blue */
+/* font-family: 'Monofett', cursive;
+font-family: 'Nova Mono', monospace; */
 
 /* BUTTONS */
 .button {
@@ -26,7 +28,8 @@ body {
     border: 15px double white;
     background-image: url(./customization/4149851.webp);
     background-size: 100%;
-    font-size: medium;
+    font-size: large;
+    font-family: 'Monofett', cursive;
 }
 
 a:link,
@@ -35,6 +38,7 @@ a:active,
 a:visited {
     color: black;
     text-decoration: none;
+    font-family: 'Monofett', cursive;
 }
 
 .countdown {
@@ -50,7 +54,8 @@ a:visited {
     top: 10px;
     background-image: url(./customization/4149851.webp);
     background-size: 100%;
-    font-size: medium;
+    font-size: large;
+    font-family: 'Monofett', cursive;
 }
 
 /* QUIZ BOX */
@@ -87,6 +92,7 @@ a:visited {
     background-image: url(./customization/pastelclouds-06-091815-981_thumb.jpg);
     left: 225px;
     top: 30px;
+    font-family: 'Monofett', cursive;
 }
 
 #start:hover {
@@ -108,6 +114,7 @@ a:visited {
     margin-right: -35px;
     font-size: x-large;
     text-align: right;
+    font-family: 'Nova Mono', monospace;
 }
 
 #choices {
@@ -128,6 +135,7 @@ a:visited {
     border: 15px double #f59fc4;
     background-image: url(./customization/4149851.webp);
     background-size: 100%;
+    font-family: 'Nova Mono', monospace;
 }
 
 .choice:hover {
@@ -173,12 +181,15 @@ a:visited {
     position: absolute;
     top: 50px;
     display: none;
+    font-family: 'Monofett', cursive;
+
 }
 
 #scoreContainer p {
     font-size: xxx-large;
     padding: 80px;
     text-align: center;
+    font-family: 'Monofett', cursive;
 }
 
 
@@ -187,30 +198,37 @@ a:visited {
 h1 {
     text-align: center;
     font-size: xx-large;
+    font-family: 'Monofett', cursive;
 }
 
 .submit {
     position: absolute;
     top: 225px;
     right: 545px;
+    font-family: 'Monofett', cursive;
+    font-size: large;
 }
 
 .reset {
     position: absolute;
     top: 225px;
     right: 20px;
+    font-family: 'Monofett', cursive;
+    font-size: large;
 }
 
 label {
     position: absolute;
     top: 70px;
-    left: 210px;
+    left: 190px;
+    font-family: 'Nova Mono', monospace;
 }
 
 #intialsText {
     position: absolute;
     top: 70px;
-    right: 200px;
+    right: 180px;
+    font-family: 'Nova Mono', monospace;
 }
 
 li {
@@ -218,8 +236,9 @@ li {
     list-style: none;
     display: table;
     margin: 0px auto 0px auto;
-    padding:5px;
+    padding: 5px;
     border-radius: 10px;
+    font-family: 'Nova Mono', monospace;
 }
 
 .li1 {
