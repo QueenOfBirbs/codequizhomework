@@ -8,21 +8,28 @@
 </head>
 
 <body>
-    <button id="highscore" class="choice"><a href ="highscore.html" target ="_blank">Highscores</a></button>
+    <!-- HIGHSCORE BUTTON (TOP RIGHT CORNER) -->
+    <button id="highscore" class="choice"><a href="highscore.html" target="_blank">Highscores</a></button>
+    <!-- TIMER DISPLAY (TOP LEFT CORNER) -->
     <div id="timer">
         <div id="counter" class="choice">Time Left:</div>
     </div>
+    <!-- MAIN QUIZ BOX DISPLAY -->
     <div id="container">
+        <!-- START BUTTON ON QUIZ DISPLAY -->
         <div id="start">Start Quiz!</div>
         <div id="quiz" style="display: none">
+            <!-- QUESTIONS AND ANSWERS -->
             <div id="question"></div>
             <div id="choices">
                 <div class="choice" id="A" onclick="checkAnswer('A')"></div>
                 <div class="choice" id="B" onclick="checkAnswer('B')"></div>
                 <div class="choice" id="C" onclick="checkAnswer('C')"></div>
             </div>
+            <!-- PROGRESS BAR ON QUIZ DISPLAY -->
             <div id="progress"></div>
         </div>
+        <!-- PAGE THAT SHOWS THE SCORE AFTER FINISHED QUIZ -->
         <div id="scoreContainer" style="display: none"></div>
     </div>
     <script src="script.js"></script>
