@@ -1,19 +1,28 @@
 body {
     background-image: url(./customization/5450.jpg);
-    background-position: bottom
-    background-size: cover;
+    background-position: bottom background-size=cover;
     background-repeat: no-repeat;
+    margin: auto;
 }
+
+/* COLORS */
+/* #92cf7d green*/
+/* #f59fc4 pink*/
+/* #ef5561 red */
+/* #f8f086 yellow */
+/* #6ec8ed blue */
 
 /* BUTTONS */
 .button {
     width: 135px;
     text-align: center;
-    border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     padding: 5px;
-    background-color: white;
+    border: 15px double white;
+    background-image: url(./customization/4149851.webp);
+    background-size: 100%;
+    font-size: medium;
 }
 
 .countdown {
@@ -21,29 +30,30 @@ body {
     z-index: 10;
     width: 135px;
     text-align: center;
-    border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
-    padding: 5px;
-    background-color: white;
-    left: 1115px;
+    padding: 0px;
+    border: 15px double white;
+    left: 1100px;
     top: 10px;
+    background-image: url(./customization/4149851.webp);
+    background-size: 100%;
+    font-size: medium;
 }
-
-.highscore {}
 
 /* QUIZ BOX */
 #container {
-    margin: 20px auto;
-    background-color: white;
     height: 300px;
     width: 700px;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0px 5px 15px 0px;
     position: absolute;
     left: 275px;
     top: 80px;
-    background-image: linear-gradient();
+    border-style: double;
+    border-width: 25px;
+    border-color: white;
+    background-image: linear-gradient(#6ec8ed, #edbbd3, #f8f086);
 }
 
 /* START BUTTON */
@@ -51,59 +61,70 @@ body {
     font-size: 1.5em;
     font-weight: bolder;
     word-break: break-all;
-    width: 100px;
-    height: 150px;
-    border: 2px solid lightgrey;
+    width: 200px;
+    height: 200px;
+    border: 25px double white;
+    border-radius: 50%;
     text-align: center;
+    font-size: xx-large;
+    line-height: 200px;
     cursor: pointer;
     position: absolute;
     left: 300px;
     top: 50px;
-    color: lightgrey;
+    background-image: url(./customization/pastelclouds-06-091815-981_thumb.jpg);
+    left: 225px;
+    top: 30px;
 }
 
 #start:hover {
-    border: 3px solid lightseagreen;
-    color: lightseagreen;
+    border: 25px double white;
+    background-image: url(./customization/v935-aum-10-a_2.jpg);
+    background-size: contain;
+
 }
 
 /* QUESTIONS AND ANSWERS */
 #question {
     width: 500px;
     height: 125px;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 #question p {
-    margin: 0;
-    padding: 15px;
-    font-size: 1.25em;
+    padding: 20px;
+    padding-right: 15px;
+    margin-right: -35px;
+    font-size: x-large;
+    text-align:right;
 }
 
 #choices {
-    width: 480px;
+    display: inline;
     position: absolute;
-    right: 0;
-    top: 125px;
-    padding: 10px
+    right: 65px;
+    top: 80px;
+    padding: 20px;
 }
 
 .choice {
     display: inline-block;
     width: 135px;
     text-align: center;
-    border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     padding: 5px;
+    border: 15px double #f59fc4;
+    background-image: url(./customization/4149851.webp);
+    background-size: 100%;
 }
 
 .choice:hover {
-    border: 2px solid grey;
+    border: 15px double #6ec8ed;
     font-weight: bold;
+    background-image: url(./customization/images.png);
+    background-size: 100%;
 }
+
 
 /* PROGRESS CIRCLE BAR */
 #progress {
@@ -118,7 +139,7 @@ body {
 .prog {
     width: 25px;
     height: 25px;
-    border: 1px solid #000;
+    border: 7px solid white;
     display: inline-block;
     border-radius: 50%;
     margin-left: 5px;
@@ -127,7 +148,6 @@ body {
 
 /* POP-UP SCORE PAGE (AFTER FINISHING QUIZ) */
 #scoreContainer {
-    margin: 20px auto;
     background-color: white;
     opacity: 0.8;
     height: 300px;

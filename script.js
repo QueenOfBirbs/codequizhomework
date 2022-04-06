@@ -12,31 +12,31 @@ const scoreDiv = document.getElementById("scoreContainer");
 // THE QUIZ QUESTIONS 
 let questions = [
     {
-        question: "What animal is Pompompurin?",
+        question: "What kinda animal is Pompompurin?",
         choiceA: " A Golden Retreiver dog.",
         choiceB: "A sentient pudding creation.",
         choiceC: "A stereotypically inaccurate caricature of a French dude.",
         correct: "A"
     }, {
-        question: "What is Cinnamoroll's birthday?",
+        question: "What is Cinnamoroll's birthdate?",
         choiceA: "Fictional characters don't have birthdays.",
         choiceB: "March 6th, 2001.",
         choiceC: "Christmas.",
         correct: "B"
     }, {
-        question: "Why does Bad Badtz-Maru often represented with XO?",
-        choiceA: "His name translates to that from Japanese.",
-        choiceB: "His name has a meaning?",
-        choiceC: "Who is Bad Badtz-Maru??? That Guy Fieri looking penguin right?",
+        question: "Who's name roughly translates to XO?",
+        choiceA: "Bad Badtz-Maru.",
+        choiceB: "I don't know Japanese, how am I supposed to know?",
+        choiceC: "Whomst??? That Guy Fieri looking penguin right?",
         correct: "A"
     }, {
-        question: "Who is the snail that is often seen with Keroppi??",
+        question: "Who's snail guy who's with Keroppi?",
         choiceA: "The snack he's saving for later.",
         choiceB: "A regular snail??",
         choiceC: "It's Den Den, his friend.",
         correct: "C"
     }, {
-        question: "Who is Kuromi's rival/girlfriend?",
+        question: "Who is Kuromi's rival and/or girlfriend?",
         choiceA: "Kuromi doesn't have a girlfriend???",
         choiceB: "My Melody.",
         choiceC: "People don't remember Onegai My Melody so this isn't common knowledge lol.",
@@ -54,22 +54,22 @@ let questions = [
         choiceC: "Why would Sanrio make a train character? Trains aren't cute.",
         correct: "A"
     }, {
-        question: "Who was Hangyodon made by?",
+        question: "Who is the creator of Hangyodon?",
         choiceA: "Your mom.",
         choiceB: "Hisato Inoue.",
         choiceC: "Are you refering to Oannes, a fish/man Mesopotamian god? I don't think you can create an anciet deity.",
         correct: "B"
     }, {
-        question: "Why is Gudetama an egg??",
+        question: "Why is Gudetama an egg character?",
         choiceA: "The creator thought egg yolks were kinda adorable because of their droopy demeanor.",
         choiceB: "Because why not?",
         choiceC: "Why do you know such niche knowledge on Sanrio characters? This is very specific.",
         correct: "A"
     }, {
-        question: "Are San-X and Sanrio the same thing??",
+        question: "Are San-X and Sanrio the same?",
         choiceA: "Yes.",
         choiceB: "No.",
-        choiceC: "Technically no, but remembering which characters belong to which isn't really important.",
+        choiceC: "Technically no, but there's alot of overlap. It's like V2 Sanrio.",
         correct: "C"
     }
 ];
@@ -150,12 +150,12 @@ function checkAnswer(answer) {
 
 // PROGRESS CIRCLE GREEN CHANGE
 function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+    document.getElementById(runningQuestion).style.backgroundColor = "#92cf7d";
 }
 
 // PROGRESS CIRCLE RED CHANGE AND TAKING AWAY 6 SECONDS FOR A WRONG ANSWER
 function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    document.getElementById(runningQuestion).style.backgroundColor = "#ef5561";
     timeLeft -= 5;
 }
 
