@@ -23,7 +23,7 @@ To run this application locally make sure to copy the files and then run npm ins
 
 ## Usage
 
-This is largely for a homework assignment though feel free to look around!
+This is largely for a homework assignment though feel free to look around! Made using HTML, Javascript and CSS. Made in April 2022.
 Here is a screenshot of the application:
 
 <img src="./finished/quiz-start.png">
