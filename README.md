@@ -19,7 +19,7 @@ This is a finished homework assignment from the beginning of the bootcamp course
 
 ## Installation
 
-To run this application locally make sure to copy the files and then run npm install to have all of the correct dependencies. Otherwise please follow the link in the description or above to try out the deployed version yourself!
+To run this application locally make sure to copy the files and then run ```npm install``` to have all of the correct dependencies. Otherwise please follow the link in the description or above to try out the deployed version yourself!
 
 ## Usage
 
